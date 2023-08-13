@@ -5,44 +5,47 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-
+<h1>Create a new Movie </h1>
+<hr />
+<h3>Filter</h3>
 <form>
-    <p>
+    <div class="container">
+        <label for="FilmeGender">Genres :</label>
         <select asp-for="FilmeGender" asp-items="@Model.Genders">
-            <option value="">Todos</option>
+            <option value="">All</option>
         </select>
-        Search Filme : <input type="text" asp-for="SearchTerm" />
-        <input type="submit" value="search" />
-    </p>
+        <label for="SearchTerm"> Title :</label>
+        <input type="text" asp-for="SearchTerm" />
+        <span class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-success">
+            Search
+        </button>
+        </span>
+    </div>
 </form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Filme[0].Title)
+                @Html.DisplayNameFor(model => model.Movie[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Filme[0].Gender)
+                @Html.DisplayNameFor(model => model.Movie[0].Gender)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Filme[0].LaunchDate)
+                @Html.DisplayNameFor(model => model.Movie[0].LaunchDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Filme[0].Price)
+                @Html.DisplayNameFor(model => model.Movie[0].Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Filme[0].Points)
+                @Html.DisplayNameFor(model => model.Movie[0].Points)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Filme)
+        @foreach (var item in Model.Movie)
         {
             <tr>
                 <td>
@@ -69,3 +72,6 @@
         }
     </tbody>
 </table>
+<p class="d-flex justify-content-end">
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
+</p>

@@ -12,8 +12,8 @@ using RazorPagesCursoUdemy.Data;
 namespace RazorPagesCursoUdemy.Migrations
 {
     [DbContext(typeof(RazorPagesCursoUdemyContext))]
-    [Migration("20230813202500_adding_data_annotations")]
-    partial class adding_data_annotations
+    [Migration("20230813212827_first_migration")]
+    partial class first_migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace RazorPagesCursoUdemy.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("RazorPagesCursoUdemy.Model.Filme", b =>
+            modelBuilder.Entity("RazorPagesCursoUdemy.Model.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace RazorPagesCursoUdemy.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Filme");
+                    b.ToTable("Movie");
                 });
 #pragma warning restore 612, 618
         }

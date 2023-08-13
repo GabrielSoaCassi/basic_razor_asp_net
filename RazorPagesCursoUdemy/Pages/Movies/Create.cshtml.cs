@@ -25,18 +25,18 @@ namespace RazorPagesCursoUdemy.Pages.Filmes
         }
 
         [BindProperty]
-        public Filme Filme { get; set; } = default!;
+        public Movie Filme { get; set; } = default!;
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Filme == null || Filme == null)
+          if (!ModelState.IsValid || _context.Movie == null || Filme == null)
             {
                 return Page();
             }
 
-            _context.Filme.Add(Filme);
+            _context.Movie.Add(Filme);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

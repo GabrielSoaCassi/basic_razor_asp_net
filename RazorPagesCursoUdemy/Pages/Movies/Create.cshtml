@@ -7,7 +7,7 @@
 
 <h1>Create</h1>
 
-<h4>Filme</h4>
+<h4>Movie</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -38,15 +38,16 @@
                 <input asp-for="Filme.Points" class="form-control" />
                 <span asp-validation-for="Filme.Points" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="m-2 form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-secondary">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+ 
 </div>
 
 @section Scripts {

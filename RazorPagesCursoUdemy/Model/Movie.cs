@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RazorPagesCursoUdemy.Model
 {
-    public class Filme:Base
+    public class Movie:Base
     {
         [StringLength(100,MinimumLength = 2,ErrorMessage = "Title isn't on the minimum length")]
         public string Title { get; set; } = string.Empty;

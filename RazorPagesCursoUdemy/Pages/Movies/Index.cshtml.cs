@@ -20,7 +20,7 @@ namespace RazorPagesCursoUdemy.Pages.Filmes
             _context = context;
         }
 
-        public IList<Filme> Filme { get; set; } = default!;
+        public IList<Movie> Movie { get; set; } = default!;
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
         [BindProperty(SupportsGet = true)]
@@ -30,18 +30,18 @@ namespace RazorPagesCursoUdemy.Pages.Filmes
 
         public async Task OnGetAsync()
         {
-            Genders = new SelectList(await _context.Filme.Select(o => o.Gender).Distinct().ToListAsync());
-            var filmes = from m in _context.Filme select m;
+            Genders = new SelectList(await _context.Movie.Select(o => o.Gender).Distinct().ToListAsync());
+            var filmes = from m in _context.Movie select m;
             if (!string.IsNullOrWhiteSpace(SearchTerm))
                 filmes = filmes.Where(f => f.Title.Contains(SearchTerm));
 
 
             if (!string.IsNullOrWhiteSpace(FilmeGender))
                 filmes = filmes.Where(f => f.Gender.Equals(FilmeGender));
-            if (_context.Filme != null)
+            if (_context.Movie != null)
             {
 
-                Filme = await filmes.ToListAsync();
+                Movie = await filmes.ToListAsync();
             }
         }
     }

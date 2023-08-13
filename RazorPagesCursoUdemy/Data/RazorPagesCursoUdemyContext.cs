@@ -14,6 +14,6 @@ namespace RazorPagesCursoUdemy.Data
         {
         }
 
-        public DbSet<Filme> Filme { get; set; } = default!;
+        public DbSet<Movie> Movie { get; set; } = default!;
     }
 }

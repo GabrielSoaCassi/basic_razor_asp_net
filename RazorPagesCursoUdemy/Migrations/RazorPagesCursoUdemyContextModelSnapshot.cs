@@ -22,7 +22,7 @@ namespace RazorPagesCursoUdemy.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("RazorPagesCursoUdemy.Model.Filme", b =>
+            modelBuilder.Entity("RazorPagesCursoUdemy.Model.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,7 +51,7 @@ namespace RazorPagesCursoUdemy.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Filme");
+                    b.ToTable("Movie");
                 });
 #pragma warning restore 612, 618
         }

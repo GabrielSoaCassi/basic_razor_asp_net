@@ -21,16 +21,16 @@ namespace RazorPagesCursoUdemy.Pages.Filmes
         }
 
         [BindProperty]
-        public Filme Filme { get; set; } = default!;
+        public Movie Filme { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Filme == null)
+            if (id == null || _context.Movie == null)
             {
                 return NotFound();
             }
 
-            var filme =  await _context.Filme.FirstOrDefaultAsync(m => m.Id == id);
+            var filme =  await _context.Movie.FirstOrDefaultAsync(m => m.Id == id);
             if (filme == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace RazorPagesCursoUdemy.Pages.Filmes
 
         private bool FilmeExists(int id)
         {
-          return (_context.Filme?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Movie?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
