@@ -13,6 +13,9 @@
 
 <form>
     <p>
+        <select asp-for="FilmeGender" asp-items="@Model.Genders">
+            <option value="">Todos</option>
+        </select>
         Search Filme : <input type="text" asp-for="SearchTerm" />
         <input type="submit" value="search" />
     </p>
@@ -32,6 +35,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Filme[0].Price)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filme[0].Points)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -50,6 +56,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Points)
                 </td>
                 <td>
                     <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

@@ -30,12 +30,17 @@ namespace RazorPagesCursoUdemy.Pages.Filmes
 
         public async Task OnGetAsync()
         {
+            Genders = new SelectList(await _context.Filme.Select(o => o.Gender).Distinct().ToListAsync());
             var filmes = from m in _context.Filme select m;
-            if(!string.IsNullOrWhiteSpace(SearchTerm))
+            if (!string.IsNullOrWhiteSpace(SearchTerm))
                 filmes = filmes.Where(f => f.Title.Contains(SearchTerm));
+
+
+            if (!string.IsNullOrWhiteSpace(FilmeGender))
+                filmes = filmes.Where(f => f.Gender.Equals(FilmeGender));
             if (_context.Filme != null)
             {
-                
+
                 Filme = await filmes.ToListAsync();
             }
         }

@@ -11,5 +11,6 @@ namespace RazorPagesCursoUdemy.Model
         public DateTime LaunchDate { get; set; }
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
+        public int Points { get; set; } = 0;
     }
 }
